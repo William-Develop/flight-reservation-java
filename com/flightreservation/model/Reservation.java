@@ -1,6 +1,6 @@
 package com.flightreservation.model;
 
-public class Reservation {
+public class Reservation extends AbstractModel {
 
     private Passenger passenger;
     private Flight flight;

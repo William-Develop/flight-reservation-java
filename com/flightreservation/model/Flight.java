@@ -1,6 +1,6 @@
 package com.flightreservation.model;
 
-public class Flight {
+public class Flight extends AbstractModel {
 
     private String flightNumber;
     private String operatingAirlines;

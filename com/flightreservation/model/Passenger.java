@@ -1,6 +1,6 @@
 package com.flightreservation.model;
 
-public class Passenger {
+public class Passenger extends AbstractModel {
 
     private String firstName;
     private String middleName;
