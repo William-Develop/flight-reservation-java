@@ -1,22 +1,27 @@
 package com.flightreservation.dao;
 
 import com.flightreservation.model.Flight;
-
+import com.flightreservation.model.Reservation;
 import java.util.HashMap;
 
 public class ReservationDaoImplementation implements ReservationDao  {
 
     HashMap<Long, Flight> flights;
+    HashMap<Long, Reservation> reservations;
+    Long reservationId;
+
 
     //Constructor.
     public ReservationDaoImplementation() {
         //New instance of HashMap "flights".
         flights = new HashMap<>();
+        //New instance of HashMap "reservations".
+        reservations = new HashMap<>();
 
         //flight1
         Flight flight1 = new Flight();
         //Set flight1 fields.
-        flight1.setId(1l);
+        flight1.setId(1L);
         flight1.setFlightNumber("123");
         flight1.setOperatingAirlines("American");
         flight1.setDepartureCity("Austin");
@@ -31,7 +36,7 @@ public class ReservationDaoImplementation implements ReservationDao  {
         //flight2
         Flight flight2 = new Flight();
         //Set flight1 fields.
-        flight2.setId(2l);
+        flight2.setId(2L);
         flight2.setFlightNumber("456");
         flight2.setOperatingAirlines("South West");
         flight2.setDepartureCity("Denver");
@@ -44,5 +49,18 @@ public class ReservationDaoImplementation implements ReservationDao  {
         flights.put(flight2.getId(), flight2);
 
     }
+
+    @Override
+    public Reservation bookFlight(Reservation reservation) {
+        // Retrieve the flight from the flights HashMap using the flightId from the reservation.
+        Flight flight = flights.get(reservation.getFlightId());
+        // Set the retrieved flight to the reservation
+        reservation.setFlight(flight);
+        reservationId = reservationId + 1;
+        reservation.setId(reservationId);
+        reservations.put(reservationId, reservation);
+        return reservation;
+    }
+
 
 }//eoc
