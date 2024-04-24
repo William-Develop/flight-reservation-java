@@ -53,12 +53,15 @@ public class Reservation extends AbstractModel {
 
 
     //toString method to print the contents of an object in a human-readable format.
+
     @Override
     public String toString() {
         return "Reservation{" +
                 "passenger=" + passenger +
                 ", flight=" + flight +
                 ", flightId=" + flightId +
+                ", numberOfBags=" + numberOfBags +
+                ", checkedIn=" + checkedIn +
                 '}';
     }
 }//eoc

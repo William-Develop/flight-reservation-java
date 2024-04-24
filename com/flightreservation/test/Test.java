@@ -37,7 +37,11 @@ public class Test {
         reservation.setFlightId(1l);
 
         // Book the flight with the reservation and print the result
-        System.out.println(dao.bookFlight(reservation));
+        Reservation savedReservation = dao.bookFlight(reservation);
+        System.out.println(savedReservation);
+
+        Reservation checkedInReservation = dao.checkedIn(savedReservation.getId(), 2);
+        System.out.println(checkedInReservation);
 
     }//eom
 }
