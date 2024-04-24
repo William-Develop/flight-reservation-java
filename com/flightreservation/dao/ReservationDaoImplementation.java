@@ -62,5 +62,13 @@ public class ReservationDaoImplementation implements ReservationDao  {
         return reservation;
     }
 
+    @Override
+    public Reservation checkedIn(long reservationId, int numberOfBags) {
+        Reservation reservation = reservations.get(reservationId);
+        reservation.setNumberOfBags(numberOfBags);
+        reservation.setCheckedIn(true);
+        return reservation;
+    }
+
 
 }//eoc

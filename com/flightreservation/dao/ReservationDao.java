@@ -6,4 +6,6 @@ public interface ReservationDao {
 
     Reservation bookFlight(Reservation reservation);
 
+    Reservation checkedIn(long reservationId, int numberOfBags);
+
 }//eoc
