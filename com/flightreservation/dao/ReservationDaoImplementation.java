@@ -8,7 +8,7 @@ public class ReservationDaoImplementation implements ReservationDao  {
 
     HashMap<Long, Flight> flights;
     HashMap<Long, Reservation> reservations;
-    Long reservationId;
+    long reservationId;
 
 
     //Constructor.
